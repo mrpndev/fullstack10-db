@@ -1,22 +1,8 @@
 const router = require("express").Router()
-const { User } = require("../models/auth")
+const { registerUser, loginUser } = require("../controllers/auth")
 
-router.post("/register", (req, res) => {
-	try {
-		console.log("register route hit")
-	} catch(err) {
-		console.log(err)
-		res.status(500).json({ message: "Internal Server Error" })
-	}
-})
+router.post("/register", registerUser)
 
-router.post("/login", (req, res) => {
-	try {
-		console.log("login route hit")
-	} catch(err) {
-		console.log(err)
-		res.status(500).json({ message: "Internal Server Error" })
-	}
-})
+router.post("/login", loginUser)
 
 module.exports = router

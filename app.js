@@ -8,7 +8,7 @@ const HOST = process.env.HOST || "127.0.0.1";
 const auth = require("./routes/auth");
 const routes = require("./routes/routes");
 // import our sequelize database config
-const db = require("./db");
+const { db } = require("./db");
 
 app.use(express.json());
 app.use(auth);
